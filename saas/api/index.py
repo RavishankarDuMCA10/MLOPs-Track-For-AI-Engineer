@@ -9,7 +9,10 @@ app = FastAPI()
 def idea():
     client = OpenAI()
     prompt = [
-        {"role": "user", "content": "Come up with a new business idea for AI Agents"}
+        {
+            "role": "user",
+            "content": "Reply with a new business idea for AI Agents, formatted with headings, sub-headings and bullet points",
+        }
     ]
     stream = client.chat.completions.create(
         model="gpt-5-nano", messages=prompt, stream=True
